@@ -1,0 +1,952 @@
+@import "./breakpoints.scss";
+@import "./variables.scss";
+@import url("https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap");
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100vw;
+  overflow-x: hidden;
+}
+* {
+  overflow-y: none;
+}
+
+.main {
+  padding: 0 140px;
+  position: relative;
+  width: 80vw;
+  margin: 0 auto;
+  overflow: hidden;
+  @include media("<=tablet") {
+    padding: 0 20px;
+  }
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+#scene-1 {
+  background: $yellow;
+  width: 0%;
+  height: 740px;
+  max-height: 740px;
+  position: relative;
+  padding-top: 20px;
+  @include media("<=tablet") {
+    height: 340px;
+  }
+
+  .logo {
+    margin-top: 40px;
+  }
+
+  .banner {
+    margin-top: 130px;
+    white-space: nowrap;
+    @include media("<=tablet") {
+      margin-top: 45px;
+    }
+
+    .banner__line {
+      font-size: 145px;
+      line-height: 138px;
+      color: #fff;
+      letter-spacing: -4.1px;
+      font-family: $primaryFont;
+      padding: 0;
+      margin: 0;
+
+      @include media("<=tablet") {
+        font-size: 100px;
+        line-height: 100px;
+      }
+
+      @include media("<=tablet") {
+        font-size: 53px;
+        line-height: 52px;
+        letter-spacing: -1.5px;
+      }
+    }
+
+    .banner__button {
+      font-family: $einaBold;
+      font-size: 16px;
+      color: $darkSilver;
+
+      display: flex;
+      align-items: center;
+      margin-top: 70px;
+      cursor: pointer;
+
+      @include media("<=tablet") {
+        margin-top: 30px;
+      }
+
+      .banner__button-arrow {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .scene-1__phone {
+    position: relative;
+    width: 100%;
+    margin-right: 0;
+    z-index: 2;
+
+    transition: margin-right 500ms;
+
+    @include media("<=desktop") {
+      right: 80px;
+    }
+
+    @include media("<=1850px") {
+      margin-right: 160px;
+    }
+    @include media("<=desktop") {
+      margin-right: 220px;
+    }
+
+    @include media("<=tablet") {
+      display: none;
+    }
+  }
+
+  .scene-1__cars {
+    position: absolute;
+    margin-left: -130px;
+    margin-top: 25px;
+    bottom: -104px;
+    @include media("<=tablet") {
+      position: relative;
+      left: 143px;
+      bottom: 38px;
+      width: 100vw;
+    }
+    @include media("<=425px") {
+      bottom: 18px;
+      left: 133px;
+      width: 100vw;
+    }
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+#scene-2 {
+  background: #fff;
+  width: 100%;
+  position: relative;
+  margin-top: 243px;
+
+  .main {
+    padding-bottom: 200px;
+    @include media("<=tablet") {
+      padding-bottom: 500px;
+    }
+  }
+
+  @include media("<=tablet") {
+    margin-top: 145px;
+
+    .row {
+      flex-direction: column-reverse;
+    }
+  }
+
+  .description {
+    margin-left: 160px;
+    margin-top: 130px;
+
+    width: 545px;
+    position: relative;
+
+    @include media("<=desktop") {
+      margin-left: 160px;
+      margin-top: 60px;
+    }
+
+    @include media("<=tablet") {
+      width: 100%;
+      margin-left: 0;
+      margin-top: 0;
+    }
+
+    h1 {
+      margin: 0;
+      color: #2b3144;
+      font-size: 95px;
+      letter-spacing: -0.46px;
+      line-height: 98px;
+      font-family: $primaryFont;
+      font-weight: normal;
+      position: relative;
+      opacity: 0;
+      @include media("<=tablet") {
+        font-size: 45px;
+        line-height: 48px;
+      }
+    }
+
+    p {
+      margin: 0;
+      padding: 0;
+      font-family: $einaRegular;
+      font-size: 16px;
+      line-height: 26px;
+      letter-spacing: -0.57px;
+      width: 100%;
+      max-width: 449px;
+      transform: translateY(-40px);
+      opacity: 0;
+
+      @include media("<=tablet") {
+        line-height: 22px;
+        margin-top: -20px;
+        margin-bottom: 70px;
+      }
+    }
+  }
+
+  .slideMask {
+    width: 524px;
+    height: 661px;
+    overflow: hidden;
+
+    @include media("<=tablet") {
+      width: 100%;
+      height: 340px;
+      left: 0%;
+      bottom: -8%;
+    }
+
+    .slide {
+      width: 524px;
+      height: 661px;
+      background: $yellow;
+      position: relative;
+      right: -100%;
+
+      @include media("<=tablet") {
+        width: 100%;
+      }
+
+      display: flex;
+      flex-direction: column;
+
+      .slide__item {
+        position: absolute;
+        opacity: 0;
+        margin-left: 130px;
+        margin-top: 130px;
+        @include media("<=tablet") {
+          margin-left: 30px;
+          margin-top: 30px;
+        }
+      }
+
+      .slide__controls {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 45px;
+        position: relative;
+        right: 35px;
+
+        z-index: 2;
+        @include media("<=tablet") {
+          right: 15px;
+        }
+        .slide__controls-arrow {
+          cursor: pointer;
+
+          @include media("<=tablet") {
+            transform: scale(0.8);
+            right: 5px;
+          }
+
+          &:nth-child(1) {
+            transform: rotateY(180deg);
+            margin-right: 20px;
+
+            @include media("<=tablet") {
+              transform: rotateY(180deg) scale(0.8);
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+
+      .slide__content {
+        @include media("<=tablet") {
+          height: 170px;
+        }
+        h1 {
+          color: black;
+          font-family: $primaryFont;
+          font-size: 64px;
+          margin: 0;
+          font-weight: normal;
+          @include media("<=tablet") {
+            font-size: 45px;
+          }
+        }
+
+        p {
+          font-family: $primaryFont;
+          color: $darkSilver;
+          margin: 0;
+          margin-top: -10px;
+          @include media("<=tablet") {
+            line-height: 26px;
+          }
+        }
+
+        .slide__content-description {
+          display: flex;
+          flex-direction: column;
+          margin-top: 70px;
+          @include media("<=tablet") {
+            margin-top: 40px;
+          }
+          .row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 10px;
+
+            .icon {
+              width: 56px;
+              margin-right: 30px;
+              height: 20px;
+            }
+
+            span {
+              font-family: $primaryFont;
+              font-size: 31px;
+
+              color: #1b1e28;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .slide-images {
+    position: absolute;
+    margin-top: -200px;
+    width: 100%;
+    z-index: 2;
+    margin-left: 90px;
+    display: flex;
+    align-items: flex-end;
+    opacity: 0;
+    right: -200%;
+
+    @include media("<=tablet") {
+      position: relative;
+    }
+
+    .slide-images__item {
+      opacity: 0;
+      position: absolute;
+      margin-top: 290px;
+      margin-left: -20px;
+
+      @include media("<=tablet") {
+        position: absolute;
+        opacity: 0;
+        bottom: -340px;
+        width: 100%;
+        left: -68px;
+
+        img {
+          max-width: 100%;
+        }
+      }
+
+      @include media("<=425px") {
+        bottom: -280px;
+        width: 100%;
+        left: -68px;
+      }
+    }
+
+    .slide-images__item[name="porsche"] {
+      margin-top: 260px;
+
+      @include media("<=tablet") {
+        bottom: -300px;
+      }
+      @include media("<=425px") {
+        bottom: -250px;
+      }
+    }
+    .slide-images__item.active {
+      opacity: 1;
+    }
+  }
+}
+
+#scene-3 {
+  margin-top: 100px;
+  margin-bottom: 400px;
+  @include media("<=425px") {
+    margin-top: -100px;
+  }
+  .container {
+    width: 80vw;
+    margin: 0 auto;
+    position: relative;
+    height: 100%;
+    display: flex;
+
+    @include media("<=tablet") {
+      flex-direction: column;
+    }
+  }
+
+  .text {
+    width: 480px;
+    // margin-left: 190px;
+    margin-right: 150px;
+    @include media("<=1680px") {
+      margin-right: 200px;
+    }
+
+    @include media("<=425px") {
+      width: 300px;
+    }
+
+    h1 {
+      font-size: 95px;
+      line-height: 98px;
+      letter-spacing: -0.46px;
+      font-family: $primaryFont;
+      font-weight: normal;
+      color: #2b3144;
+      margin: 0;
+      margin-top: 80px;
+      opacity: 0;
+
+      @include media("<=desktop") {
+        font-size: 81px;
+        line-height: 78px;
+      }
+
+      @include media("<=tablet") {
+        font-size: 45px;
+        line-height: 48px;
+      }
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 26px;
+      letter-spacing: -0.46px;
+      font-family: $einaRegular;
+      width: 330px;
+      margin: 0;
+      margin-top: 40px;
+      opacity: 0;
+
+      @include media("<=tablet") {
+        line-height: 22px;
+      }
+    }
+  }
+
+  .elements {
+    width: 50%;
+    position: relative;
+
+    @include media("<=tablet") {
+      margin-top: 150px;
+    }
+
+    .map {
+      position: relative;
+      opacity: 0;
+      @include media("<=1680px") {
+        right: 80px;
+      }
+
+      @include media("<=425px") {
+        display: none;
+      }
+    }
+
+    .app {
+      position: absolute;
+      top: -160px;
+      right: 0;
+      margin-right: 10px;
+      opacity: 0;
+
+      @include media("<=desktop") {
+        right: -90px;
+      }
+
+      @include media("<=tablet") {
+        right: auto;
+      }
+
+      @include media("<=425px") {
+        display: none;
+      }
+    }
+
+    .porsche {
+      position: absolute;
+      left: -340px;
+      bottom: -80px;
+      transform: rotateY(180deg) scale(0.8);
+      opacity: 0;
+      @include media("<=1680px") {
+        left: -440px;
+      }
+
+      @include media("<=desktop") {
+        left: -540px;
+      }
+
+      @include media("<=425px") {
+        display: none;
+      }
+    }
+  }
+
+  .mobile-only {
+    display: none;
+    opacity: 0;
+    @include media("<=425px") {
+      display: block;
+      max-width: 100%;
+      margin-top: -100px;
+    }
+  }
+}
+
+#scene-4 {
+  margin-top: 100px;
+
+  @include media("<=tablet") {
+    margin-top: 0;
+  }
+
+  @include media("<=425px") {
+    margin-top: -300px;
+  }
+  .row {
+    padding: 0;
+    @include media("<=tablet") {
+      flex-direction: column-reverse;
+      margin-top: -200px;
+    }
+  }
+
+  .elements {
+    display: flex;
+    margin-left: -70px;
+
+    @include media("<=tablet") {
+      display: none;
+    }
+  }
+
+  .mobile-only {
+    display: none;
+    width: 100%;
+    opacity: 0;
+    @include media("<=tablet") {
+      display: block;
+      margin-top: 30px;
+      width: 70%;
+    }
+
+    @include media("<=425px") {
+      display: block;
+      margin-top: 30px;
+      width: 100%;
+    }
+  }
+
+  .porsche-mask {
+    // width: 730px;
+    // height: 823px;
+    position: relative;
+    overflow: hidden;
+
+    .porsche {
+      position: relative;
+      left: -100%;
+    }
+  }
+
+  .app {
+    position: relative;
+    left: -31%;
+    top: -16.5%;
+    opacity: 0;
+    @include media("<=tablet") {
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .description {
+    position: relative;
+    right: 13%;
+    margin-top: 280px;
+    // top: 53%;
+    min-width: 560px;
+    @include media("<=desktop") {
+      min-width: 560px;
+      margin-left: -100px;
+    }
+    @include media("<=tablet") {
+      margin-left: 0;
+      min-width: 100%;
+      right: 0;
+    }
+    h1 {
+      margin: 0;
+      color: #2b3144;
+      font-size: 95px;
+      letter-spacing: -0.46px;
+      line-height: 98px;
+      font-family: $primaryFont;
+      font-weight: normal;
+      position: relative;
+      top: -100px;
+      // transform: translateY(-100px);
+      opacity: 0;
+      @include media("<=desktop") {
+        font-size: 85px;
+        line-height: 88px;
+      }
+      @include media("<=tablet") {
+        font-size: 45px;
+        line-height: 48px;
+        margin-top: 200px;
+      }
+      @include media("<=425px") {
+        margin-top: -80px;
+      }
+    }
+
+    p {
+      margin: 0;
+      padding: 0;
+      font-family: $einaRegular;
+      font-size: 16px;
+      line-height: 26px;
+      letter-spacing: -0.57px;
+      width: 100%;
+      max-width: 410px;
+      margin-top: 35px;
+      position: relative;
+      top: -50px;
+      // transform: translateY(0px);
+      opacity: 0;
+    }
+  }
+}
+
+#scene-5 {
+  margin: 220px 0;
+
+  @include media("<=425px") {
+    margin-top: 100px;
+  }
+
+  .container {
+    display: flex;
+    width: 82vw;
+    margin: 0 auto;
+    @include media("<=desktop") {
+      // width: 90vw;
+      // margin-left: 90px;
+      // padding: 0;
+    }
+    @include media("<=tablet") {
+      width: 100vw;
+      margin-left: 100px;
+      flex-direction: column;
+      margin-left: 0;
+    }
+    .item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 100%;
+      max-height: 100%;
+      // width: 453px;
+      flex: 1;
+      padding: 100px 0;
+      background: #f1f1f1;
+      margin-right: 20px;
+      text-align: start;
+      align-items: center;
+      @include media("<=tablet") {
+        width: 100vw;
+        margin-bottom: 20px;
+      }
+
+      @include media("<=425px") {
+        width: 100%;
+      }
+
+      .text {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        h1 {
+          font-family: $primaryFont;
+          font-size: 34px;
+          font-weight: normal;
+          color: #2b3144;
+          margin: 0;
+          line-height: 88px;
+          letter-spacing: -0.16px;
+          text-align: center;
+        }
+
+        p {
+          font-family: $einaRegular;
+          font-size: 14px;
+          font-weight: normal;
+          margin: 0;
+          letter-spacing: -0.16px;
+        }
+      }
+    }
+  }
+}
+
+#scene-6 {
+  position: relative;
+
+  .container {
+    width: 80vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+
+    @include media("<=tablet") {
+      flex-direction: column-reverse;
+      justify-content: center;
+    }
+
+    .elements {
+      opacity: 0;
+      width: 637px;
+      height: 722px;
+      background: $yellow;
+      position: relative;
+      @include media("<=tablet") {
+        width: 100%;
+        height: 469px;
+        margin-top: 30px;
+      }
+      @include media("<=425px") {
+        margin-top: 40px;
+      }
+      img {
+        width: 70%;
+        position: absolute;
+        bottom: 0;
+        right: 12%;
+
+        @include media("<=desktop") {
+          width: 100%;
+          right: 0%;
+        }
+
+        @include media("<=tablet") {
+          width: 45%;
+          left: 5%;
+          margin: 0 auto;
+        }
+        @include media("<=425px") {
+          width: 80%;
+          margin: 0 auto;
+        }
+      }
+    }
+
+    .text {
+      opacity: 0;
+      margin-top: 80px;
+      margin-left: 100px;
+      @include media("<=tablet") {
+        margin-left: 0;
+      }
+      h1 {
+        margin: 0;
+        color: #2b3144;
+        font-size: 95px;
+        letter-spacing: -0.46px;
+        line-height: 98px;
+        font-family: $primaryFont;
+        font-weight: normal;
+        position: relative;
+        width: 660px;
+        // transform: translateY(-100px);
+        // opacity: 0;
+        @include media("<=tablet") {
+          font-size: 45px;
+          line-height: 48px;
+          margin-top: 200px;
+        }
+        @include media("<=425px") {
+          margin-top: -80px;
+          width: 100%;
+        }
+      }
+
+      .line {
+        background: #f4f4f5;
+        height: 4px;
+        width: 100%;
+        margin-top: 40px;
+      }
+
+      p {
+        margin: 0;
+        padding: 0;
+        font-family: $einaRegular;
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: -0.57px;
+        width: 100%;
+        max-width: 410px;
+        margin-top: 35px;
+        position: relative;
+
+        // transform: translateY(0px);
+        // opacity: 0;
+      }
+    }
+  }
+
+  .mercedes {
+    width: 100%;
+    max-width: 50%;
+    position: absolute;
+    margin-top: -150px;
+    margin-left: 350px;
+    opacity: 0;
+    @include media("<=desktop") {
+      width: 100%;
+      margin-left: 250px;
+    }
+    @include media("<=tablet") {
+      display: none;
+    }
+  }
+
+  .button {
+    font-family: $einaBold;
+    font-size: 16px;
+    color: $darkSilver;
+
+    display: flex;
+    align-items: center;
+    margin-top: 70px;
+    cursor: pointer;
+
+    @include media("<=desktop") {
+      margin-top: 50px;
+    }
+
+    @include media("<=tablet") {
+      margin-top: 30px;
+    }
+
+    .button-arrow {
+      margin-left: 10px;
+    }
+  }
+}
+
+#footer {
+  width: 80vw;
+  margin: 100px auto;
+  padding-top: 100px;
+  display: flex;
+  flex: row;
+  justify-content: space-between;
+  align-items: center;
+
+  .nav {
+    @include media("<=425px") {
+      display: none;
+    }
+    a {
+      font-family: $einaSemiBold;
+      font-size: 11px;
+      color: #4f5874;
+      text-decoration: none;
+    }
+    ul {
+      display: flex;
+      li {
+        list-style: none;
+        margin-right: 65px;
+      }
+    }
+  }
+}
+
+.preloader {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: #fff;
+  z-index: 5;
+
+  .loader {
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .circle {
+      width: 126px;
+      height: 126px;
+      border: 2px solid #7b87af;
+      border-radius: 100px;
+      animation: rotation 3s infinite linear;
+      &:before {
+        content: " ";
+        width: 12px;
+        height: 12px;
+        background: #7b87af;
+        position: absolute;
+        border-radius: 30px;
+        margin-top: 27px;
+      }
+    }
+
+    .crown {
+      margin-top: -130px;
+    }
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
