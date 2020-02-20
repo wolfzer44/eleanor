@@ -18,7 +18,7 @@ body {
 .main {
   padding: 0 140px;
   position: relative;
-  width: 80vw;
+  width: 1400px;
   margin: 0 auto;
   overflow: hidden;
   @include media("<=tablet") {
@@ -402,7 +402,7 @@ body {
     margin-top: -100px;
   }
   .container {
-    width: 80vw;
+    width: 1400px;
     margin: 0 auto;
     position: relative;
     height: 100%;
@@ -487,7 +487,7 @@ body {
       position: absolute;
       top: -160px;
       right: 0;
-      margin-right: 10px;
+      margin-right: -60px;
       opacity: 0;
 
       @include media("<=1680px") {
@@ -674,7 +674,7 @@ body {
 
   .container {
     display: flex;
-    width: 82vw;
+    width: 1400px;
     margin: 0 auto;
     @include media("<=desktop") {
       // width: 90vw;

@@ -13,6 +13,8 @@ $(document).ready(function() {
 let tl = gsap.timeline({ paused: false, reverse: false });
 let controller = new ScrollMagic.Controller();
 
+gsap.registerPlugin(new ScrollMagic());
+
 gsap.to("#scene-1", 2, {
   width: "100%",
   ease: "Expo.easeInOut"
@@ -330,7 +332,7 @@ new ScrollMagic.Scene({
 
 const tl5 = gsap.timeline({ paused: false, reverse: false });
 
-tl5.from("#scene-5 .main .item", 1, {
+tl5.from("#scene-5 .container .item", 1, {
   y: -100,
   opacity: 0,
   stagger: 0.2,
