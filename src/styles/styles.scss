@@ -23,6 +23,7 @@ body {
   overflow: hidden;
   @include media("<=tablet") {
     padding: 0 20px;
+    width: auto;
   }
   .row {
     display: flex;
@@ -401,17 +402,6 @@ body {
   @include media("<=425px") {
     margin-top: -100px;
   }
-  .container {
-    width: 1400px;
-    margin: 0 auto;
-    position: relative;
-    height: 100%;
-    display: flex;
-
-    @include media("<=tablet") {
-      flex-direction: column;
-    }
-  }
 
   .text {
     width: 480px;
@@ -682,7 +672,7 @@ body {
       // padding: 0;
     }
     @include media("<=tablet") {
-      width: 100vw;
+      width: auto;
       margin-left: 100px;
       flex-direction: column;
       margin-left: 0;
@@ -748,6 +738,11 @@ body {
     @include media("<=tablet") {
       flex-direction: column-reverse;
       justify-content: center;
+      width: auto;
+    }
+
+    @include media("<=425px") {
+      padding: 0 20px;
     }
 
     .elements {
