@@ -490,6 +490,10 @@ body {
       margin-right: 10px;
       opacity: 0;
 
+      @include media("<=1680px") {
+        right: -40px;
+      }
+
       @include media("<=desktop") {
         right: -90px;
       }

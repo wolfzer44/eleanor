@@ -642,6 +642,12 @@ body {
   opacity: 0;
 }
 
+@media (max-width: 1680px) {
+  #scene-3 .elements .app {
+    right: -40px;
+  }
+}
+
 @media (max-width: 1366px) {
   #scene-3 .elements .app {
     right: -90px;
