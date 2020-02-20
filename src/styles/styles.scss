@@ -412,6 +412,9 @@ body {
     @include media("<=tablet") {
       flex-direction: column;
     }
+    @include media("<=425px") {
+      padding: 0 20px;
+    }
   }
 
   .text {

@@ -546,6 +546,12 @@ body {
   }
 }
 
+@media (max-width: 425px) {
+  #scene-3 .container {
+    padding: 0 20px;
+  }
+}
+
 #scene-3 .text {
   width: 480px;
   margin-right: 150px;
